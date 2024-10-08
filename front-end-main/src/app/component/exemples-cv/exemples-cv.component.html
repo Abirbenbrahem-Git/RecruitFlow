@@ -1,0 +1,200 @@
+<head>
+  <!-- Autres balises head -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* Style personnalisé pour ajouter un espace entre les icônes et les phrases */
+    .icon-text {
+      margin-left: 10px; /* Ajoute un espace à gauche des icônes */
+    }
+
+    /* Style pour aligner le texte à gauche au milieu */
+    .text-center-left {
+      text-align: left;
+      margin: auto;
+    }
+
+    /* Style pour rendre les boutons ronds */
+    .btn-round {
+      border-radius: 24px;
+    }
+    /* Style de la barre de navigation */
+    .w3-top {
+      position: fixed; /* Fixer en haut de la page */
+      width: 100%;
+      top: 0;
+    }
+
+    /* Style de la barre de navigation encadrée */
+    .w3-bar {
+      width: 100%;
+      overflow: hidden;
+      background-color: #fff; /* Couleur de fond */
+      padding: 15px; /* Espacement intérieur */
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Ombre légère */
+      border: 1px solid #ccc; /* Bordure solide */
+    }
+
+    /* Style des éléments de la barre de navigation à droite */
+    .w3-right {
+      float: right; /* Alignement à droite */
+    }
+
+    /* Style des éléments de la barre de navigation */
+    .w3-bar-item {
+      padding: 10px 20px; /* Espacement intérieur */
+      text-decoration: none;
+      color: #333; /* Couleur du texte */
+      font-size: 16px; /* Taille de la police */
+      transition: color 0.3s; /* Transition de couleur pour un effet de survol */
+    }
+
+    /* Style des éléments de la barre de navigation au survol */
+    .w3-bar-item:hover {
+      color: #666; /* Couleur du texte au survol */
+    }
+
+    /* Style de l'image du logo */
+    .img-logo {
+      width: auto; /* Ajuster la largeur automatiquement */
+      height: 40px; /* Hauteur fixe */
+      margin-right: 20px; /* Marge à droite pour séparer des éléments */
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Hauteur de la fenêtre visible */
+    }
+
+    /* Style du conteneur principal */
+    .container {
+      display: flex; /* Utilisation de flexbox */
+      flex-direction: row-reverse; /* Inversion de la direction des éléments enfants */
+      width: 100%; /* Largeur totale */
+      max-width: 1200px; /* Largeur maximale du conteneur */
+    }
+
+    .right-frame {
+      flex: 1; /* Prend tout l'espace disponible */
+      background-image: url('./assets/acceuil1.jpg'); /* Image de fond */
+      background-size: cover; /* Couverture totale */
+      background-position: center center; /* Position centrale de l'image */
+      color: #fff; /* Couleur du texte */
+      padding: 80px 100px; /* Ajoute de l'espace autour de l'image (80px en haut/bas, 100px à gauche/droite) */
+      text-align: justify; /* Justification du texte */
+    }
+
+    /* Style du texte */
+    .text-content {
+      width: 50%; /* Largeur du texte */
+      padding: 20px; /* Espacement intérieur */
+      background-color: rgba(255, 255, 255, 0.8); /* Couleur de fond avec opacité */
+      border: 2px solid #7b7979; /* Bordure */
+      border-radius: 10px; /* Coins arrondis */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Ombre */
+      margin-left: -50px; /* Ajustement de la marge pour l'effet de profondeur */
+      animation: fadeIn 1s ease-in-out; /* Animation de fondu en entrée */
+    }
+
+    /* Style des paragraphes */
+    .text-content p {
+      margin-bottom: 20px; /* Marge inférieure entre les paragraphes */
+      font-size: 18px; /* Taille de la police par défaut */
+      line-height: 1.6; /* Hauteur de ligne */
+      text-indent: 20px; /* Retrait de la première ligne */
+      text-align: justify; /* Justification du texte */
+    }
+
+    /* Style du bouton */
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      background-color: #007bff; /* Couleur de fond */
+      color: #fff; /* Couleur du texte */
+      text-decoration: none;
+      border: none;
+      border-radius: 25px; /* Coins arrondis */
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-transform: uppercase; /* Texte en majuscules */
+      font-weight: bold; /* Police en gras */
+      letter-spacing: 1px; /* Espacement entre les lettres */
+      margin-top: 20px; /* Marge supérieure */
+      font-size: 16px; /* Taille de la police */
+    }
+
+    /* Style du bouton au survol */
+    .btn:hover {
+      background-color: #0056b3; /* Couleur de fond au survol */
+    }
+
+    /* Style de l'icône */
+    .icon {
+      margin-right: 10px; /* Marge à droite */
+    }
+
+    /* Styles de texte personnalisés */
+    .large-text {
+      font-size: 40px; /* Taille de la police plus grande */
+      color: #ff6f00; /* Couleur différente pour la première phrase */
+    }
+
+    .medium-text {
+      font-size: 18px; /* Taille de la police moyenne */
+    }
+
+    .small-text {
+      font-size: 14px; /* Taille de la police plus petite */
+    }
+
+    /* Application de l'animation de changement de couleur au texte */
+    .text-content {
+      animation: changeColor 3s linear infinite; /* Changement de couleur en boucle */
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <img src="assets/logo.png" class="img-logo">
+    <div class="w3-right w3-hide-small">
+      <a href="/acceuil" class="w3-bar-item w3-button">Acceuil</a>
+      <a href="/registration" class="w3-bar-item w3-button">S'inscrire</a>
+      <a href="/login" class="w3-bar-item w3-button">Se Connecter</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="right-frame">
+      <!-- Contenu de l'image -->
+    </div>
+    <div class="text-content">
+      <!-- Texte à afficher à droite -->
+      <p class="large-text"><span class="icon">🔍</span>Plusieurs entreprises recherchent des CV sur RecruitFlow !</p>
+      <p class="medium-text"><span class="icon">🎓</span>Nous vous aiderons à être visible des recruteurs. Profitez de nos modèles gratuits de CV ainsi que de nos conseils de rédaction et de mise en page. Des exemples de CV pour tous les secteurs, emplois et expériences, personnalisables selon votre profil !</p>
+      <div class="hero1-banner__content">
+        <p class="small-text"><span class="icon">💼</span>Comment faire un CV ? Gagnez du temps avec nos exemples de CV gratuits et nos guides de rédaction. Des exemples de CV simples mais aussi des plus créatifs, suivez le guide !</p>
+        <!-- Bouton -->
+        <a href="votre-chemin-vers-le-cv.pdf" class="btn" download>Télécharger le CV</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+

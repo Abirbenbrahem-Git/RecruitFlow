@@ -1,0 +1,5 @@
+<div style="display: flex;">
+  <p-dropdown [options]="noms" [(ngModel)]="selectedNom"  placeholder="Sélectionner un gouvernorat" (onChange)="onChangedNom($event)"></p-dropdown>
+  <div style="margin-left: 50px;"></div> 
+  <p-dropdown [options]="nomv" [(ngModel)]="selectedNiv"  placeholder="Sélectionner un niveau" (onChange)="onChangedNom($event)"></p-dropdown>
+</div>

@@ -1,0 +1,154 @@
+<head>
+  <!-- Autres balises head -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* Style personnalisé pour ajouter un espace entre les icônes et les phrases */
+    .icon-text {
+      margin-left: 10px; /* Ajoute un espace à gauche des icônes */
+    }
+
+    /* Style pour aligner le texte à gauche au milieu */
+    .text-center-left {
+      text-align: left;
+      margin: auto;
+    }
+
+    /* Style pour rendre les boutons ronds */
+    .btn-round {
+      border-radius: 24px;
+    }
+    /* Style de la barre de navigation */
+    .w3-top {
+      position: fixed; /* Fixer en haut de la page */
+      width: 100%;
+      top: 0;
+    }
+
+    /* Style de la barre de navigation encadrée */
+    .w3-bar {
+      width: 100%;
+      overflow: hidden;
+      background-color: #fff; /* Couleur de fond */
+      padding: 15px; /* Espacement intérieur */
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Ombre légère */
+      border: 1px solid #ccc; /* Bordure solide */
+    }
+
+    /* Style des éléments de la barre de navigation à droite */
+    .w3-right {
+      float: right; /* Alignement à droite */
+    }
+
+    /* Style des éléments de la barre de navigation */
+    .w3-bar-item {
+      padding: 10px 20px; /* Espacement intérieur */
+      text-decoration: none;
+      color: #333; /* Couleur du texte */
+      font-size: 16px; /* Taille de la police */
+      transition: color 0.3s; /* Transition de couleur pour un effet de survol */
+    }
+
+    /* Style des éléments de la barre de navigation au survol */
+    .w3-bar-item:hover {
+      color: #666; /* Couleur du texte au survol */
+    }
+
+    /* Style de l'image du logo */
+    .img-logo {
+      width: auto; /* Ajuster la largeur automatiquement */
+      height: 40px; /* Hauteur fixe */
+      margin-right: 20px; /* Marge à droite pour séparer des éléments */
+    }
+    .custom-nav {
+      background-color: #9ad5f6 !important;
+      color: white !important;
+    }
+
+
+  </style>
+</head>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card custom-nav" style="letter-spacing:4px;">
+    <img src="assets/logo.png" class="img-logo " >
+    <div class="w3-right w3-hide-small">
+      <a href="/accueil"class="w3-bar-item w3-button">Accueil</a>
+      <a href="/registration" class="w3-bar-item w3-button">S'inscrire</a>
+      <a href="/login" class="w3-bar-item w3-button">Se Connecter</a>
+    </div>
+  </div>
+</div>
+<div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+  <div class="row">
+    <div class="col-md-6 text-center-left"> <!-- Ajouter la classe text-center-left -->
+      <h2 style="color: blue;">Rejoignez nous</h2>
+      <h4 style="color: black;"><i class="fas fa-user-plus"></i><span class="icon-text">Inscription Gratuite</span></h4>
+      <p><i class="fas fa-hands-helping"></i><span class="icon-text">Rejoignez RecruitFlow sans frais et bénéficiez d'un accompagnement sur mesure.</span></p>
+      <h4 style="color: black;"><i class="fas fa-users"></i><span class="icon-text">Recruteurs : Captez les meilleurs talents</span></h4>
+      <p><i class="fas fa-briefcase"></i><span class="icon-text">Postez votre offre et simplifiez votre recherche de talents avec notre aide.</span></p>
+      <h4 style="color: black;"><i class="fas fa-search"></i><span class="icon-text">Candidats : Trouvez l'emploi qui vous correspond</span></h4>
+      <p><i class="fas fa-id-card"></i><span class="icon-text">Optimisez votre CV en ligne pour vous démarquer et saisir l'emploi idéal.</span></p>
+    </div>
+    <div class="col-md-6 d-flex align-items-center justify-content-center">
+      <div class="d-grid gap-2">
+        <button class="btn btn-primary btn-lg btn-round" routerLink="/register">Je suis un candidat</button>
+        <button class="btn btn-secondary btn-lg btn-round" (click)="navigateToRegister1()">Je suis un employeur</button>
+
+        <p style="margin-top: 8px;">Vous avez déjà un compte? <a href="/login">Se connecter</a></p>
+
+      </div>
+
+
+      <div class="page-row hidden-print">
+        <footer class="footer fixed-bottom py-12 bg-secondary">
+          <div class="container">
+            <div class="row">
+
+              <div class="col-md-4">
+                <h6 style="color: #333;"></h6>
+                <hr style="border-top: 2px solid #747272">
+                <h6 style="color: #333;">EMPLOYEUR</h6>
+                <ul>
+                  <li><a href="#" style="color: #333;">Publier une annonce</a></li>
+                  <li><a href="#" style="color: #333;">Trouver un CV</a></li>
+                  <li><a href="#" style="color: #333;">Connexion</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <h6 style="color: #333;"></h6>
+                <hr style="border-top: 2px solid #747272">
+                <h6 style="color: #333;">CHERCHEUR D'EMPLOI</h6>
+                <ul>
+                  <li><a href="#" style="color: #333;">Trouver une emploi</a></li>
+                  <li><a href="#" style="color: #333;">Trouver une formation</a></li>
+                  <li><a href="#" style="color: #333;">Connexion</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4 d-flex justify-content-end align-items-center"> <!-- Utilisation de d-flex pour aligner horizontalement les éléments -->
+                <div style="margin-right: 10px;">
+                  <a href="#" style="color: #333; font-size: 14px;"><i class="fab fa-facebook fa-lg mr-1" style="color: #333;"></i></a>
+                </div>
+                <div style="margin-right: 10px;">
+                  <a href="#" style="color: #333; font-size: 14px;"><i class="fab fa-twitter fa-lg mr-1" style="color: #333;"></i></a>
+                </div>
+                <div style="margin-right: 10px;">
+                  <a href="#" style="color: #333; font-size: 14px;"><i class="fab fa-viadeo fa-lg mr-1" style="color: #333;"></i></a>
+                </div>
+                <div>
+                  <a href="#" style="color: #333; font-size: 14px;"><i class="fab fa-linkedin fa-lg mr-1" style="color: #333;"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+
+
+
+
+    </div>
+  </div>
+
+</div>
+<router-outlet></router-outlet>

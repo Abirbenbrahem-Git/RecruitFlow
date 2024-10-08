@@ -1,0 +1,142 @@
+<body>
+    <img src="https://www.arkalista.com/wp-content/uploads/2020/07/Recrutement-8.jpg" alt="Description de l'image" width="1700" height="240">
+    <div class="layout-wrapper">
+
+        <div class="layout-topbar">
+            <div class="layout-menu">
+                <div class="ui-tabmenu ui-widget ui-widget-content ui-corner-all">
+                </div>
+            </div>
+        </div>
+        <form [formGroup]="profileForm" >
+          <div class="layout-main">
+            <div class="layout-content">
+                <div class="login-card">
+                    <div class="login-header">
+                        <h1 style="font-size: 2.5em;"></h1>
+                        <p>Pour faciliter le processus de candidature, veuillez soumettre un CV au format PDF dans lequel vous êtes libre de compléter les informations manquantes.</p><br>
+                        <div class="custom-file-upload">
+                            <input type="file"  formControlName="fichier" name="fileInput" id="fileInput"(change)="onFileSelected($event)" (change)="onpython($event)">
+                        </div><br><br>
+                    </div>
+
+                    <div class="login-content">
+                        <div class="ui-outputpanel ui-widget">
+                            <h2>Informations personnelles</h2>
+                            <div style="display: flex; align-items: center;">
+                                <div style="margin-right: 20px; width: 45%;">
+                                    <label  class="ui-outputlabel ui-widget" for="prenom">
+                                           Prénom<span class="ui-outputlabel-rfi">*</span>
+                                    </label>
+                                    <input formControlName="prenom" id="prenom" name="prenom" type="text" placeholder="Prénom" pInputText class="md:w-full mb-5" style="padding:1rem; width: 100%;" aria-required="true">
+                                </div>
+                                <div style="width: 55%;">
+                                    <label  class="ui-outputlabel ui-widget" for="nom">
+                                           Nom<span class="ui-outputlabel-rfi">*</span>
+                                    </label>
+                                    <input formControlName="nom" id="nom" name="nom" type="text" placeholder="Nom" pInputText class="md:w-full mb-5" style="padding:1rem; width: 100%;" aria-required="true">
+                                </div>
+                            </div>
+                            <label class="ui-outputlabel ui-widget" for="email">
+                                Email<span class="ui-outputlabel-rfi">*</span>
+                            </label>
+                            <input formControlName="mail"id="mail" type="email" placeholder="E-mail" pInputText class="w-full md:w-30rem mb-5" style="padding:1rem ; width: 40%;" aria-required="true"><br>
+
+                            <h2>Coordonnées</h2>
+                            <div style="display: flex; align-items: center;">
+                                <div style="margin-right: 10px;; width: 40%;">
+                                    <label class="ui-outputlabel ui-widget" for="gov">
+                                         Gouvernorat<span class="ui-outputlabel-rfi">*</span>
+                                    </label>
+                                    <div>
+                                        <select formControlName="gouvernoratName" class="custom-select">
+                                            <option value="" disabled selected>Sélectionner un gouvernorat</option>
+                                            <option *ngFor="let gouvernorat of gouvernorats" [value]="gouvernorat.nom">{{ gouvernorat.nom }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div><br>
+                             <label class="ui-outputlabel ui-widget" for="telephone">
+                                    Téléphone<span class="ui-outputlabel-rfi">*</span>
+                            </label>
+                            <p-inputNumber id="telephone" formControlName="telephone"type="tel" placeholder="+216 "  class="w-full md:w-30rem mb-5" aria-required="true"></p-inputNumber><br>
+
+                            <h2>Expériences professionnelles</h2>
+                            <form  [formGroup]="expForm">
+                                <div formArrayName="tags">
+                                    <div class="form-group mb-2" *ngFor="let tag of tags.controls; let i = index" [formGroupName]="i" >
+                                        <label  for="" [attr.for]="i">
+                                                    {{  ' Nom du poste ' + i }} <br>
+                                        </label><br>
+                                        <input id="poste" type="text" placeholder="poste" pInputText class="w-full md:w-35rem mb-5" style="padding:1.5rem ; width: 70%;"  type="text" class="form-control" formControlName="poste"/><br>
+                                        <div style="display: flex; align-items: center;">
+                                            <div style="margin-right: 10px;; width: 40%;">
+                                                <label class="ui-outputlabel ui-widget" for="debut">
+                                                    Date de début
+                                                </label>
+                                                <input id="debut" name="debut" type="date" placeholder="Date de début" pInputText class="w-full mb-5" style="padding:1rem ; width: 90%;"  formControlName="datedebut">
+                                            </div>
+                                            <div>
+                                                <label  class="ui-outputlabel ui-widget" for="fin">
+                                                    Date de fin
+                                                </label>
+                                                <input id="fin" name="fin" type="date" placeholder="Date de fin" pInputText class="w-full  mb-5" style="padding:1rem ; width: 110%;" formControlName="datefin" >
+                                            </div>
+                                        </div>
+                                        <label class="ui-outputlabel ui-widget" for="responsabilite">
+                                            Responsabilités principales
+                                        </label>
+                                        <textarea id="responsabilite" pInputText class="w-full md:w-30rem  mb-5" style="padding:1rem; width: 80%;" formControlName="responsabilite"></textarea><br>
+                                                  <p-button label="Supprimer" styleClass="p-button-danger" (click)="deleteItem(i)"> </p-button>
+                                    </div>
+                                    <p-button label="Ajouter Expériences professionnelles" styleClass="p-button-link" (click)="addTags()"></p-button><br>
+                                </div>
+                            </form>
+                            <!--<pre>{{ expForm!.value | json }}</pre><br>-->
+
+                            <h2>Diplômes</h2>
+                            <form  [formGroup]="dipForm1">
+                                <div formArrayName="tags1">
+                                    <div class="form-group mb-2" *ngFor="let tag1 of tags1.controls; let i = index" [formGroupName]="i" >
+                                        <div style="margin-right: 10px;; width: 90%;">
+                                            <label  for="" [attr.for]="i">
+                                                {{  ' Nom du Diplôme ' + i }} <br>
+                                            </label><br>
+                                            <input id="diplome" type="text" placeholder="diplome" pInputText class="w-full md:w-30rem mb-5" style="padding:1.5rem ; width: 70%;" aria-required="true"class="form-control" type="text" formControlName="diplome"/>
+                                        </div>
+                                        <div>
+                                            <label  class="ui-outputlabel ui-widget" for="datediplome">
+                                                  Date d'obtention
+                                            </label>
+                                            <input id="datediplome" name="datediplome" type="date"  pInputText class="w-full md:w-30rem mb-5" style="padding:1rem ; width: 10%;" formControlName="datediplome" >
+                                        </div><br>
+                                        <p-button label="Supprimer" styleClass="p-button-danger" (click)="deleteItem1(i)"> </p-button>
+                                    </div>
+                                    <p-button label="Ajouter Diplômes" styleClass="p-button-link" (click)="addTags1()"></p-button><br>
+                                </div>
+                            </form>
+                            <!--<pre>{{ dipForm1!.value | json }} </pre><br>-->
+                            <h2>Skills/Compétences  </h2>
+                            <label  class="ui-outputlabel ui-widget" >
+                                Compétences<span class="ui-outputlabel-rfi">*</span>
+                         </label>
+                            <textarea formControlName="competence" name="competence" type="text"  id="competence" placeholder="Skills/Compétences" pInputText class="w-full mb-5" style="padding:1rem; width: 80%;" aria-required="true"></textarea>
+
+                        </div>
+                    </div><br>
+
+                    <div style="display: flex; justify-content: space-between;">
+                        <div style="margin-left: 20px">
+                             <button  class="btn small-width" name="register" routerLink="/rechercher">Retour</button>
+                        </div>
+                        <div style="margin-right:500px;">
+                             <button class="btn small-width" name="register" (click)="ajouterExperiencesDiplomes()">Enregistrer</button>
+                        </div>
+                        <p-toast position="bottom-right"></p-toast>
+                    </div><br>
+                </div>
+            </div>
+         </div>
+    </form>
+    </div>
+</body>

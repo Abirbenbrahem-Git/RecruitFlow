@@ -1,0 +1,333 @@
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 16px;
+      color: #333;
+      background-color: #fff;
+      overflow-x: hidden;
+    }
+
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .column {
+      float: left;
+      width: 50%;
+      padding: 10px;
+    }
+
+    .social-registration__buttons a:not(:last-child) {
+      margin-bottom: 5px;
+    }
+
+    .social-registration__linkedin {
+      background: url(../images/linkedin/Sign-In-Large---Default.png) no-repeat;
+      background-size: contain;
+      width: 215px;
+      height: 41px;
+      display: block;
+    }
+
+    .link, a {
+      color: #747272;
+      text-decoration: none !important;
+    }
+    .title {
+      color: rgba(21, 108, 135, 0.779);
+    }
+
+    a {
+      background-color: transparent;
+    }
+
+    h2, h5, h6 {
+      color: rgba(8, 8, 8, 0.779);
+    }
+
+    .container {
+      padding: 0 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    select {
+      width: 100%;
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #179fe7;
+      border-radius: 4px;
+      transition: border-color 0.15s ease-in-out;
+    }
+
+    input[type="date"] {
+      width: 100%;
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #31a1dc;
+      border-radius: 4px;
+      transition: border-color 0.15s ease-in-out;
+      box-sizing: border-box;
+    }
+
+    input:focus {
+      border-color: #80bdff;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #007bff;
+      border-color: #007bff;
+      transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+    .container-frame {
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #1591d3;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+
+    .btn-primary:disabled,
+    .btn-primary.disabled {
+      background-color: #b3d7ff;
+      border-color: #b3d7ff;
+    }
+    .title {
+      color: rgba(74, 96, 246, 0.78);
+    }
+
+    .social-buttons {
+      margin-top: 20px;
+    }
+
+    .social-buttons div {
+      margin-bottom: 10px;
+    }
+
+    .social-linkedin, .social-facebook {
+      color: #333;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-back {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      font-size: 10px;
+      padding: 2px 14px;
+    }
+
+    .social-linkedin:hover, .social-facebook:hover {
+      color: #007bff;
+    }
+
+    .fab {
+      margin-right: 5px;
+    }
+    .text-center {
+      text-align: center;
+    }
+
+    /* Style de la barre de navigation */
+    .w3-top {
+      position: fixed; /* Fixer en haut de la page */
+      width: 100%;
+      top: 0;
+    }
+
+    /* Style de la barre de navigation encadrée */
+    .w3-bar {
+      width: 100%;
+      overflow: hidden;
+      background-color: #fff; /* Couleur de fond */
+      padding: 15px; /* Espacement intérieur */
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Ombre légère */
+      border: 1px solid #ccc; /* Bordure solide */
+    }
+
+    /* Style des éléments de la barre de navigation à droite */
+    .w3-right {
+      float: right; /* Alignement à droite */
+    }
+
+    /* Style des éléments de la barre de navigation */
+    .w3-bar-item {
+      padding: 10px 20px; /* Espacement intérieur */
+      text-decoration: none;
+      color: #333; /* Couleur du texte */
+      font-size: 16px; /* Taille de la police */
+      transition: color 0.3s; /* Transition de couleur pour un effet de survol */
+    }
+
+    /* Style des éléments de la barre de navigation au survol */
+    .w3-bar-item:hover {
+      color: #666; /* Couleur du texte au survol */
+    }
+
+    /* Style de l'image du logo */
+    .img-logo {
+      width: auto; /* Ajuster la largeur automatiquement */
+      height: 40px; /* Hauteur fixe */
+      margin-right: 20px; /* Marge à droite pour séparer des éléments */
+    }
+    /*   .form-container {
+         max-width: 600px;
+         margin: 0 auto;
+         padding: 20px;
+         border: 1px solid #8c8989;
+         border-radius: 8px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+       }*/
+    .custom-nav {
+      background-color: #9ad5f6 !important;
+      color: white !important;
+    }
+
+
+  </style>
+</head>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card custom-nav" style="letter-spacing:4px;">
+    <img src="assets/logo.png" class="img-logo " >
+    <div class="w3-right w3-hide-small">
+      <a href="/accueil"class="w3-bar-item w3-button">Accueil</a>
+      <a href="/registration" class="w3-bar-item w3-button">S'inscrire</a>
+      <a href="/login" class="w3-bar-item w3-button">Se Connecter</a>
+    </div>
+  </div>
+</div>
+<body>
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<div class="container-frame">
+  <div class="row">
+    <div class="column">
+      <h2 class="title">Créer votre espace employeur</h2>
+      <i class="fas fa-arrow-alt-circle-right fa-spin"></i>
+      <hr style="border-top: 2px solid #616160;">
+      <div class="text-center" style="margin-top: 100px;">
+        <div>
+          <p><i class="far fa-lightbulb" style="color: #FFDD00;"></i> <strong>Créer un profil RecruitFlow vous aidera à</strong></p>
+          <p><i class="fas fa-bolt" style="color: blue;"></i> Gérer les offres</p>
+          <p><i class="fas fa-bolt" style="color: blue;"></i> Contrôler votre processus d'embauche du début à la fin</p>
+          <p><i class="fas fa-bolt" style="color: blue;"></i> Gagner du temps en contactant les bons candidats</p>
+        </div>
+        <a href="#" class="fas fa-heart" style="color: pink;">Se connecter via les réseaux sociaux</a>
+        <div class="social-buttons">
+          <div>
+            <a href="#" class="social-linkedin">
+              <i class="fab fa-linkedin"></i> Connexion avec LinkedIn
+            </a>
+          </div>
+          <div>
+            <a href="#" class="social-facebook">
+              <i class="fab fa-facebook"></i> Connexion avec Facebook
+            </a>
+          </div>
+        </div>
+        <h5><strong>Chercheur d'emploi ?</strong></h5>
+        <h6>Si vous êtes à la recherche d'un emploi, rendez-vous à la rubrique <a href="#">Inscription </a> d'un demandeur d'emploi .</h6>
+
+
+
+      </div>
+    </div>
+    <div class="column">
+      <div class="form-container">
+        <div class="container">
+          <form [formGroup]="register1Form" (ngSubmit)="submitForm()">
+            <div class="form-group">
+              <label for="firstname">Prénom*</label>
+              <input type="text" class="form-control" placeholder="votre prénom..." id="firstname" formControlName="firstname" />
+            </div>
+            <div class="form-group">
+              <label for="lastname">Nom de famille*</label>
+              <input type="text" class="form-control" placeholder="Votre nom..." id="lastname" formControlName="lastname" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email*</label>
+              <input type="email" class="form-control" id="email" placeholder="Votre adresse email..." formControlName="email" />
+            </div>
+            <div class="form-group">
+              <label for="telephone">Numéro de téléphone*</label>
+              <input type="tel" class="form-control" id="telephone" placeholder ="Votre Numéro de téléphone..." formControlName="telephone" />
+            </div>
+            <div class="form-group">
+              <label for="password">Mot de passe*</label>
+              <input type="password" class="form-control" placeholder="votre mot de passe..." id="password" formControlName="password" />
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword">Confirmation de mot de passe*</label>
+              <input type="password" class="form-control" id="confirmPassword" placeholder="Confirmer votre mot de passe..." formControlName="confirmPassword" />
+            </div>
+            <div class="form-group">
+              <label for="nomEntreprise">Nom de l'entreprise*</label>
+              <input type="text" class="form-control" id="nomEntreprise" placeholder="Le nom de l'entreprise..." formControlName="nomEntreprise" />
+            </div>
+            <div class="form-group">
+              <label for="emailEntreprise">Email de l'entreprise*</label>
+              <input type="email" class="form-control" id="emailEntreprise"  placeholder="Le email de l'entreprise..." formControlName="emailEntreprise" />
+            </div>
+            <div class="form-group">
+              <label for="telephoneEntreprise">Téléphone de l'entreprise*</label>
+              <input type="tel" class="form-control" id="telephoneEntreprise"  placeholder="Le télephone de l'entreprise..." formControlName="telephoneEntreprise" />
+            </div>
+            <div class="form-group">
+              <label for="adresseEntreprise">Adresse de l'entreprise*</label>
+              <input type="text" class="form-control" id="adresseEntreprise" placeholder="Le Adresse de l'entreprise..." formControlName="adresseEntreprise" />
+            </div>
+            <div class="form-group">
+              <label for="secteurActivite">Secteur d'activité*</label>
+              <select class="form-control"  id="secteurActivite" formControlName="secteurActivite" >
+                <option value="" disabled selected>Sélectionnez Secteur d'activité</option>
+                <option value="Informatique">Informatique</option>
+                <option value="Finance">Finance</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Santé">Santé</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="register1Form.invalid">S'inscrire</button>
+            <p style="margin-top: 8px;">Vous avez déjà un compte? <a href="/login">Se connecter</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>

@@ -1,0 +1,56 @@
+<p-dialog header="Ajouter offre" [(visible)]="displayAddModal" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false"  (onHide)="closeModal()"> 
+  <form [formGroup]="offreForm"  class="offre-form">
+    
+    <div class="field">
+      <label class="block" for="title">Titre *</label>
+      <input type="text" pInputText id="titre" formControlName="titre" placeholder="Titre" required />
+      <small class="p-error block" *ngIf="
+          offreForm.controls['titre'].invalid &&
+          offreForm.controls['titre'].dirty">Ce champs est obligatoire</small>
+    </div> 
+    
+    <div class="field">
+      <label class="block" for="description">Description *</label>
+      <input type="text" pInputText id="description" formControlName="description" placeholder="Description"/>
+      <small class="p-error block" *ngIf="
+          offreForm.controls['description'].invalid &&
+          offreForm.controls['description'].dirty">Ce champs est obligatoire</small>
+    </div> 
+
+    <div class="field">
+      <label class="block">Détail</label>
+      <textarea pInputTextarea formControlName="detail" placeholder="Détail"></textarea>
+    </div>
+
+    <div class="field">
+      <label class="block" for="salaire">Salaire *</label>
+      <p-inputNumber placeholder="Salaire" id="salaire" formControlName="salaire" class="block"></p-inputNumber>
+      <small class="p-error block" *ngIf="
+          offreForm.controls['salaire'].invalid &&
+          offreForm.controls['salaire'].dirty">Ce champs est obligatoire</small>
+    </div>  
+
+    <div class="field">
+      <label class="block">Gouvernorat *</label>
+      <p-dropdown [options]="gouvernorats" formControlName="gouvernorat" placeholder="Sélectionner un gouvernorat" optionLabel="nom"></p-dropdown>
+      <small class="p-error block" *ngIf="
+          offreForm.controls['gouvernorat'].invalid &&
+          offreForm.controls['gouvernorat'].dirty">Ce champs est obligatoire</small>
+    </div>
+    
+    <div class="field">
+      <label class="block">Niveau *</label>
+      <p-dropdown [options]="niveaus" formControlName="niveau" placeholder="Sélectionner un niveau" optionLabel="nom"></p-dropdown>
+      <small class="p-error block" *ngIf="
+          offreForm.controls['niveau'].invalid &&
+          offreForm.controls['niveau'].dirty">Ce champs est obligatoire</small>
+    </div>
+
+  </form>
+
+    <ng-template pTemplate="footer">
+      <p-button (click)="closeModal()" label="Annuler" styleClass="p-button-text"></p-button>
+      <p-button type="submit" (click)="addOffre()" label="Ajouter"  [disabled]="offreForm.invalid"></p-button>
+    </ng-template>
+</p-dialog>
+ 

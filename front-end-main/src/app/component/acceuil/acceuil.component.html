@@ -1,0 +1,563 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    body {font-family: "Times New Roman", Georgia, Serif;}
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Playfair Display";
+      letter-spacing: 5px;
+    }
+
+    .hero-links a {
+      display: block;
+    }
+
+
+    .hero-links a:hover {
+      background-color: #eaeaea;
+    }
+
+    /* Reset des styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .hero-link svg {
+      width: 30px;
+      height: 30px;
+      margin-left: 10px;
+    }
+
+
+    .phrase .hero-link::before {
+      left: auto;
+      right: -15px;
+    }
+
+    .phrase .hero-link svg {
+      margin-left: 0;
+    }
+
+    @keyframes pulse {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.05);
+      }
+    }
+
+    .hero-link svg {
+      width: 30px;
+      height: 30px;
+      margin-left: 10px;
+    }
+
+
+    .phrase .hero-link::before {
+      left: auto;
+      right: -15px;
+    }
+
+    .phrase .hero-link svg {
+      margin-left: 0;
+    }
+
+    .circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @keyframes pulse {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.05);
+      }
+    }
+    /* Styles CSS */
+    .phrase.active {
+      background-color: lightblue;
+    }
+
+    .bold-text {
+      font-weight: bold;
+    }
+    .phrase {
+      margin: 10px 0;
+      background-color: #f0f0f0;
+      padding: 15px;
+      border-radius: 20px;
+      border: 2px solid #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .phrase:hover {
+      background-color: #e0e0e0;
+      transform: translateY(-5px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .blog_section {
+      margin-left: 95px;
+    }
+
+
+    .card-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: stretch;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      flex: 0 0 calc(34% - 26px);
+      margin: 13px;
+      border: 1px solid #94d0f9;
+      border-radius: 5px;
+      overflow: hidden;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+
+    .card:hover {
+      transform: translateY(-5px);
+      background-color: #007bff;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h5 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #00050b;
+    }
+
+    .card-content p {
+      font-size: 14px;
+      color: #060000;
+      margin-bottom: 20px;
+    }
+
+    .card-content a {
+      display: inline-block;
+      background-color: #a8cef8;
+      color: #007bff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .card-content a:hover {
+      background-color: #0056b3;
+      color: #95beeb;
+    }
+
+    .hero-image img {
+      border: 6px solid white;
+      border-radius: 30px;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 100px;
+      background-color: white;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+
+    }
+    .header::before {
+      content: "";
+      position: absolute;
+      top: -20%;
+      left: -20%;
+      width: 140%;
+      height: 140%;
+      background: linear-gradient(135deg, rgba(4, 105, 208, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+      transform: rotate(45deg);
+      animation: animateReflection 5s linear infinite;
+    }
+    @keyframes animateReflection {
+      0% {
+        opacity: 0.3;
+        transform: rotate(45deg) translateY(-20%);
+      }
+      50% {
+        opacity: 0.6;
+        transform: rotate(45deg) translateY(-5%);
+      }
+      100% {
+        opacity: 0.3;
+        transform: rotate(45deg) translateY(-20%);
+      }
+    }
+
+
+    .header:hover {
+      background-color: white;
+    }
+
+    .content {
+      margin-bottom: 20px;
+    }
+
+    .flex-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .text-container {
+      flex: 1;
+      text-align: left;
+    }
+
+    .image-container {
+      flex: 1;
+    }
+
+    .header-image {
+      max-width: 100%;
+      border-radius: 20px;
+    }
+
+    .content h1 {
+      transition: transform 0.3s;
+    }
+
+    .content:hover h1 {
+      transform: scale(1.1);
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    button:focus {
+      outline: none;
+    }
+    @keyframes moveHeaderContent {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .header-content {
+      padding: 30px;
+      color: #111111;
+      animation: moveHeaderContent 0.5s ease-in-out;
+    }
+
+    .content:hover .header-content {
+      animation: none;
+    }
+    .header::after {
+      content: "";
+      position: absolute;
+      top: -10%;
+      left: -10%;
+      width: 120%;
+      height: 120%;
+      background: linear-gradient(45deg, rgba(0, 0, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+      transform: rotate(-45deg);
+      animation: animateSecondReflection 5s linear infinite;
+    }
+
+    @keyframes animateSecondReflection {
+      0% {
+        opacity: 0.3;
+        transform: rotate(-45deg) translateY(-10%);
+      }
+      50% {
+        opacity: 0.6;
+        transform: rotate(-45deg) translateY(-2%);
+      }
+      100% {
+        opacity: 0.3;
+        transform: rotate(-45deg) translateY(-10%);
+      }
+    }
+
+    @keyframes moveHeaderContent {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .header-content {
+      padding: 30px;
+      color: #111111;
+      animation: moveHeaderContent 0.5s ease-in-out;
+    }
+
+    .content:hover .header-content {
+      animation: none;
+    }
+    @keyframes moveHeaderContent {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    button:focus {
+      outline: none;
+    }
+
+
+    .header-content {
+      padding: 30px;
+      color: #111;
+      animation: moveHeaderContent 0.5s ease-in-out;
+    }
+
+    .content:hover .header-content {
+      animation: none;
+    }
+    .animated-button {
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes slideIn {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .animated-text {
+      animation: slideIn 1.5s ease forwards;
+    }
+
+    .blog_section {
+      margin-left: -10px;
+    }
+
+    .custom-nav {
+      background-color: #9ad5f6 !important;
+      color: white !important;
+    }
+
+
+  </style>
+</head>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card custom-nav" style="letter-spacing:4px;">
+  <img src="assets/logo.png" class="img-logo">
+    <div class="w3-right w3-hide-small">
+      <a href="/accueil"class="w3-bar-item w3-button">Accueil</a>
+      <a href="/registration" class="w3-bar-item w3-button">S'inscrire</a>
+      <a href="/login" class="w3-bar-item w3-button">Se Connecter</a>
+    </div>
+  </div>
+</div>
+
+<header class="header" style="margin-bottom: 90px;">
+  <div class="header-content">
+    <div class="content">
+      <div class="flex-container">
+        <div class="text-container">
+          <hr style="border-top: 2px solid hsl(0,0%,100%);">
+          <hr style="border-top: 2px solid hsl(0,0%,100%);">
+          <hr style="border-top: 2px solid hsl(0,0%,100%);">
+          <hr style="border-top: 2px solid hsl(0,0%,100%);">
+
+            <h1 class="animated-text">Bienvenue sur notre site de recrutement</h1>
+            <p class="animated-text">Nous sommes toujours à la recherche de nouveaux talents.</p>
+            <p class="animated-text">Explorez nos opportunités d'emploi et rejoignez une équipe dynamique !</p>
+            <p class="animated-text">Nous croyons en votre potentiel. Laissez-nous vous aider à réaliser vos rêves professionnels.</p>
+            <p class="animated-text">Rejoignez-nous dès aujourd'hui et commencez votre voyage vers le succès !</p>
+
+          <br>
+          <br>
+          <br>
+          <button class="btn btn-primary btn-lg btn-round" (click)="navigateTologin()">Se Connecter</button>
+
+
+        </div>
+        <div class="image-container">
+
+          <img class="header-image" src="assets/acceuil0.avif" alt="Hamburger Catering">
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<div class="w3-content" style="max-width:1100px; margin-bottom: 100px;">
+  <div class="w3-col m6 w3-padding-large w3-hide-small">
+    <img src="assets/acceuil1.jpg" class="w3-round w3-image w3-opacity-min1" alt="Table Setting" width="900" height="900">
+  </div>
+  <div class="w3-col m6 w3-padding-large">
+    <h1 class="animateSecondReflection w3-center">À propos de Recruit Flow</h1><br>
+    <h5 class="animateSecondReflection w3-center">Application de recrutement</h5>
+    <p class="animateSecondReflection w3-large">La mise en place d’une plateforme en ligne représente un choix stratégique pour les entreprises, dans ce cadre s’inscrit notre projet qui vise à offrir aux employeurs une plateforme pour la création des offres d’emploi personnalisées, la recherche avancée des candidats et la gestion des candidatures et aux employés de rechercher les offres qui leur correspondent le mieux et y postuler que ce soit via un formulaire de saisie ou en téléchargeant un <span class="w3-tag w3-light-grey">CV</span> pré-rempli. </p>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
+
+<div class="w3-content" style="margin-bottom: 100px;">
+  <section class="blog_section layout_padding" style="text-align: center;">
+    <hr style="border-top: 2px solid hsl(0,0%,100%);">
+    <hr style="border-top: 2px solid hsl(0,0%,100%);">
+    <hr style="border-top: 2px solid hsl(0,0%,100%);">
+    <hr style="border-top: 2px solid hsl(0,0%,100%);">
+    <div class="heading_container">
+      <div class="container">
+        <h2>Vivez une expérience professionnelle forte en sensation !</h2>
+      </div>
+      <div class="card-container d-flex justify-content-start"> <!-- Alignement à gauche -->
+        <div class="card mx-2">
+          <div class="img-box">
+            <img src="images/b1.jpg" alt="">
+          </div>
+          <div class="card-content">
+            <h5>Explorez nos conseils</h5>
+            <p>Besoin d'aide pour rédiger votre CV ? Comment faire un CV pour de l’alternance ?</p>
+            <a href="/app-conseil">Read More</a>
+          </div>
+        </div>
+
+        <div class="card mx-2">
+          <div class="img-box">
+            <img src="images/b2.jpg" alt="">
+          </div>
+          <div class="card-content">
+            <h5>Exemples de CV gratuits</h5>
+            <p>Des milliers de CV sont consultés chaque jour par les recruteurs sur RecruitFlow. Déposez votre CV pour être directement contacté par votre futur employeur. Profitez de nos nombreux modèles de CV.</p>
+            <a href="/exemples-cv">Read More</a>
+          </div>
+        </div>
+
+        <div class="card mx-2">
+          <div class="img-box">
+            <img src="images/b3.jpg" alt="">
+          </div>
+          <div class="card-content">
+            <h5>Conseils pour trouver un job</h5>
+            <p>La recherche d'emploi peut être un défi, mais avec une approche stratégique, vous pouvez maximiser vos chances de succès.</p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>Powered by <a href="#" class="w3-hover-text-blue">Recruit Flow</a></p>
+</footer>
+
+</body>
+<router-outlet></router-outlet>

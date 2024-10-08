@@ -1,0 +1,85 @@
+<p-dialog header="Ajouter candidat" [(visible)]="displayAddModal" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false" (onHide)="closeModal()">
+  <form [formGroup]="candidatForm" class="candidat-form">
+
+    <div class="field">
+      <label class="block" for="firstname">Prénom *</label>
+      <input type="text" pInputText id="firstname" formControlName="firstname" placeholder="Prénom" required />
+      <small class="p-error block" *ngIf="
+          candidatForm.controls['firstname'].invalid &&
+          candidatForm.controls['firstname'].dirty">Ce champ est obligatoire</small>
+    </div>
+
+    <div class="field">
+      <label class="block" for="lastname">Nom *</label>
+      <input type="text" pInputText id="lastname" formControlName="lastname" placeholder="Nom" required />
+      <small class="p-error block" *ngIf="
+          candidatForm.controls['lastname'].invalid &&
+          candidatForm.controls['lastname'].dirty">Ce champ est obligatoire</small>
+    </div>
+
+    <div class="field">
+      <label class="block" for="email">Adresse Email *</label>
+      <input type="email" pInputText id="email" formControlName="email" placeholder="Adresse Email" required />
+      <small class="p-error block" *ngIf="
+          candidatForm.controls['email'].invalid &&
+          candidatForm.controls['email'].dirty">Veuillez saisir une adresse email valide</small>
+    </div>
+
+    <div class="field">
+      <label class="block" for="password">Mot de passe *</label>
+      <input type="password" pInputText id="password" formControlName="password" placeholder="Mot de passe" required />
+      <small class="p-error block" *ngIf="
+          candidatForm.controls['password'].invalid &&
+          candidatForm.controls['password'].dirty">Ce champ est obligatoire</small>
+    </div>
+    <div class="field">
+      <label class="block" for="telephone">Téléphone *</label>
+      <input type="text" pInputText id="telephone" formControlName="telephone" placeholder="Téléphone" required />
+      <small class="p-error block" *ngIf="
+          candidatForm.controls['telephone'].invalid &&
+          candidatForm.controls['telephone'].dirty">Ce champ est obligatoire</small>
+    </div>
+
+    <div class="field">
+      <label class="block" for="dateNaissance">Date de Naissance *</label>
+      <p-calendar
+        id="dateNaissance"
+        formControlName="dateNaissance"
+        placeholder="Date de Naissance"
+        [showIcon]="true"
+        [showButtonBar]="true"
+        [required]="true"
+        [style]="{'width':'100%'}"
+        [monthNavigator]="true"
+        [yearNavigator]="true"
+        yearRange="1900:2050"
+        dateFormat="dd/mm/yy"
+        appendTo="body"
+        [inputStyle]="{'width': '100%'}"
+      ></p-calendar>
+      <small class="p-error block" *ngIf="
+        candidatForm.controls['dateNaissance'].invalid &&
+        candidatForm.controls['dateNaissance'].dirty">Ce champ est obligatoire</small>
+    </div>
+
+    <div class="field">
+      <label class="block">Gouvernorat *</label>
+      <p-dropdown [options]="gouvernorats" formControlName="gouvernorat" placeholder="Sélectionner un gouvernorat" optionLabel="nom"></p-dropdown>
+      <small class="p-error block" *ngIf="
+         candidatForm.controls['gouvernorat'].invalid &&
+          candidatForm.controls['gouvernorat'].dirty">Ce champs est obligatoire</small>
+    </div>
+    <div class="field">
+      <label class="block">civilite *</label>
+      <p-dropdown [options]="civilites" formControlName="civilite" placeholder="Sélectionner un civilite" optionLabel="nom"></p-dropdown>
+      <small class="p-error block" *ngIf="
+         candidatForm.controls['civilite'].invalid &&
+          candidatForm.controls['civilite'].dirty">Ce champs est obligatoire</small>
+    </div>
+
+  </form>
+  <ng-template pTemplate="footer">
+    <p-button (click)="closeModal()" label="Annuler" styleClass="p-button-text"></p-button>
+    <p-button type="button" (click)="addCandidat()" label="Ajouter" [disabled]="candidatForm.invalid"></p-button>
+  </ng-template>
+</p-dialog>

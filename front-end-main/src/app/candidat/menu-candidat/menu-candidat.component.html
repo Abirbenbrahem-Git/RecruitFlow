@@ -1,0 +1,34 @@
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav"><br><br><br><br>
+        <li class="nav-item">
+            <img src="assets/logo.png" alt="Description de l'image" width="230" height="100">
+        </li>
+        <br><br><br><br><br><br>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/accueil" [routerLink]="['/accueil']">
+                 <i class="pi pi-home menu-icon"></i>
+                 <span class="menu-title">Accueil</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse"  [routerLink]="['/rechercher']" aria-expanded="false" aria-controls="ui-basic">
+                <!--<i class="pi pi-circle-on menu-icon"></i>-->
+                <i class="pi pi-briefcase menu-icon"></i>
+                <span class="menu-title">Offres D'emploi</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/candidatures']">
+                <i class="pi pi-table menu-icon"></i>
+                <span class="menu-title">Mes Candidatures</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" [routerLink]="['/profile']" aria-expanded="false" aria-controls="auth">
+                <i class="pi pi-user menu-icon"></i>
+                 <span class="menu-title">Mon profil</span>
+             </a>
+        </li>
+    </ul>
+</nav>
+

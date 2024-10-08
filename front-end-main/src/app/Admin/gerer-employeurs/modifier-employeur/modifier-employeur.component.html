@@ -1,0 +1,84 @@
+<p-dialog
+  header="Modifier employeur"
+  [(visible)]="displayEditModal"
+  [modal]="true"
+  [style]="{ width: '50vw' }"
+  [draggable]="false"
+  [resizable]="false"
+  (onHide)="closeModal()">
+  <form [formGroup]="employeurForm"  class="employeur-form">
+    <div class="field">
+      <label class="block" for="firstname">Prénom *</label>
+      <input type="text" pInputText id="firstname" formControlName="firstname" placeholder="Prénom" required />
+      <small class="p-error block" *ngIf="
+          employeurForm.controls['firstname'].invalid &&
+          employeurForm.controls['firstname'].dirty">Ce champ est obligatoire</small>
+    </div>
+
+    <div class="field">
+      <label class="block" for="lastname">Nom *</label>
+      <input type="text" pInputText id="lastname" formControlName="lastname" placeholder="Nom" required />
+      <small class="p-error block" *ngIf="
+          employeurForm.controls['lastname'].invalid &&
+          employeurForm.controls['lastname'].dirty">Ce champ est obligatoire</small>
+    </div>
+
+    <div class="field">
+      <label class="block" for="email">Adresse Email *</label>
+      <input type="email" pInputText id="email" formControlName="email" placeholder="Adresse Email" required />
+      <small class="p-error block" *ngIf="
+          employeurForm.controls['email'].invalid &&
+          employeurForm.controls['email'].dirty">Veuillez saisir une adresse email valide</small>
+    </div>
+
+    <div class="field">
+      <label class="block" for="password">Mot de passe *</label>
+      <input type="password" pInputText id="password" formControlName="password" placeholder="Mot de passe" required />
+      <small class="p-error block" *ngIf="
+          employeurForm.controls['password'].invalid &&
+          employeurForm.controls['password'].dirty">Ce champ est obligatoire</small>
+    </div>
+
+    <div class="field">
+      <label class="block" for="telephone">telephone *</label>
+      <input type="text" pInputText id="telephone" formControlName="telephone" placeholder="telephone" required />
+      <small class="p-error block" *ngIf="
+          employeurForm.controls['telephone'].invalid &&
+          employeurForm.controls['telephone'].dirty">Ce champ est obligatoire</small>
+    </div>
+    <div class="field">
+      <label class="block" for="nomEntreprise">nomEntreprise *</label>
+      <input type="text" pInputText id="nomEntreprise" formControlName="nomEntreprise" placeholder="nomEntreprise" required />
+      <small class="p-error block" *ngIf="
+          employeurForm.controls['nomEntreprise'].invalid &&
+          employeurForm.controls['nomEntreprise'].dirty">Ce champ est obligatoire</small>
+    </div>
+    <div class="field">
+      <label class="block" for="emailEntreprise">emailEntreprise *</label>
+      <input type="text" pInputText id="emailEntreprise" formControlName="emailEntreprise" placeholder="emailEntreprise" required />
+      <small class="p-error block" *ngIf="
+          employeurForm.controls['emailEntreprise'].invalid &&
+          employeurForm.controls['emailEntreprise'].dirty">Ce champ est obligatoire</small>
+    </div>
+    <div class="field">
+      <label class="block" for="adresseEntreprise">adresseEntreprise *</label>
+      <input type="text" pInputText id="adresseEntreprise" formControlName="adresseEntreprise" placeholder="adresseEntreprise" required />
+      <small class="p-error block" *ngIf="
+          employeurForm.controls['adresseEntreprise'].invalid &&
+          employeurForm.controls['adresseEntreprise'].dirty">Ce champ est obligatoire</small>
+    </div>
+    <div class="field">
+      <label class="block">Secteur d'activité *</label>
+      <select formControlName="secteurActivite" class="form-control">
+        <option value="" disabled selected>Sélectionner un secteur d'activité</option>
+        <option *ngFor="let secteur of secteurActivites" [value]="secteur">{{ secteur }}</option>
+      </select>
+      <small class="p-error block" *ngIf="employeurForm.get('secteurActivite')?.invalid && employeurForm.get('secteurActivite')?.dirty">Ce champ est obligatoire</small>
+    </div>
+  </form>
+
+  <ng-template pTemplate="footer">
+    <p-button (click)="closeModal()" label="Annuler" styleClass="p-button-text"></p-button>
+    <p-button type="submit" (click)="editEmployeur()" label="Modifier"></p-button>
+  </ng-template>
+</p-dialog>

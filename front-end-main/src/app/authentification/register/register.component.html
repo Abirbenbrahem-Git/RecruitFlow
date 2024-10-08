@@ -1,0 +1,328 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 16px;
+      color: #333;
+      background-color: #fff;
+      overflow-x: hidden;
+    }
+
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .column {
+      float: left;
+      width: 50%;
+      padding: 10px;
+    }
+
+    .social-registration__buttons a:not(:last-child) {
+      margin-bottom: 5px;
+    }
+
+    .social-registration__linkedin {
+      background: url(../images/linkedin/Sign-In-Large---Default.png) no-repeat;
+      background-size: contain;
+      width: 215px;
+      height: 41px;
+      display: block;
+    }
+
+    .link, a {
+      color: #747272;
+      text-decoration: none !important;
+    }
+    .title {
+      color: rgb(44, 76, 236);
+    }
+
+    a {
+      background-color: transparent;
+    }
+
+    h2, h5, h6 {
+      color: rgba(8, 8, 8, 0.779);
+    }
+
+    .container {
+      padding: 0 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    select {
+      width: 100%;
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #179fe7;
+      border-radius: 4px;
+      transition: border-color 0.15s ease-in-out;
+    }
+
+    input[type="date"] {
+      width: 100%;
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      transition: border-color 0.15s ease-in-out;
+      box-sizing: border-box;
+    }
+
+    input:focus {
+      border-color: #179fe7;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #007bff;
+      border-color: #177ce8;
+      transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+    .container-frame {
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #137ae1;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+
+    .btn-primary:disabled,
+    .btn-primary.disabled {
+      background-color: #b3d7ff;
+      border-color: #1772d9;
+    }
+    .title {
+      color: rgba(74, 96, 246, 0.78);
+    }
+
+    .social-buttons {
+      margin-top: 20px;
+    }
+
+    .social-buttons div {
+      margin-bottom: 10px;
+    }
+
+    .social-linkedin, .social-facebook {
+      color: #333;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-back {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      font-size: 10px;
+      padding: 2px 14px;
+    }
+
+    .social-linkedin:hover, .social-facebook:hover {
+      color: #007bff;
+    }
+
+    .fab {
+      margin-right: 5px;
+    }
+    .text-center {
+      text-align: center;
+    }
+
+    /*barrrrrr*/
+    .w3-top {
+      position: fixed;
+      width: 100%;
+      top: 0;
+    }
+
+
+    .w3-bar {
+      width: 100%;
+      overflow: hidden;
+      background-color: #fff;
+      padding: 15px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border: 1px solid #ccc;
+    }
+
+
+    .w3-right {
+      float: right;
+    }
+
+
+    .w3-bar-item {
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .w3-bar-item:hover {
+      color: #666;
+    }
+
+    .img-logo {
+      width: auto;
+      height: 40px;
+      margin-right: 20px;
+    }
+    .custom-nav {
+      background-color: #9ad5f6 !important;
+      color: white !important;
+    }
+
+
+  </style>
+</head>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card custom-nav" style="letter-spacing:4px;">
+    <img src="assets/logo.png" class="img-logo " >
+    <div class="w3-right w3-hide-small">
+      <a href="/accueil"class="w3-bar-item w3-button">Accueil</a>
+      <a href="/registration" class="w3-bar-item w3-button">S'inscrire</a>
+      <a href="/login" class="w3-bar-item w3-button">Se Connecter</a>
+    </div>
+  </div>
+</div>
+<body>
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<div class="container-frame">
+
+  <div class="row">
+    <div class="column">
+      <h2 class="title">Créer votre profil candidat</h2>
+      <i class="fas fa-arrow-alt-circle-right fa-spin"></i>
+      <hr style="border-top: 2px solid #616160;">
+      <div class="text-center" style="margin-top: 100px;">
+        <div>
+          <p><i class="far fa-lightbulb" style="color: #FFDD00;"></i> <strong>Créer un profil RecruitFlow vous aidera à</strong></p>
+          <p><i class="fas fa-bolt" style="color: blue;"></i> Recevoir des alertes pour les meilleurs emplois</p>
+          <p><i class="fas fa-bolt" style="color: blue;"></i> Rechercher des emplois à l'aide de filtres avancés</p>
+          <p><i class="fas fa-bolt" style="color: blue;"></i> Ajouter votre CV et soyez vu par les meilleurs employeurs</p>
+        </div>
+        <a href="#" class="fas fa-heart" style="color: pink;">Se connecter via les réseaux sociaux</a>
+
+        <div class="social-buttons">
+          <div>
+            <a href="#" class="social-linkedin">
+              <i class="fab fa-linkedin"></i> Connexion avec LinkedIn
+            </a>
+          </div>
+          <div>
+            <a href="#" class="social-facebook">
+              <i class="fab fa-facebook"></i> Connexion avec Facebook
+            </a>
+          </div>
+        </div>
+        <h5><strong>Employeur qui cherche à recruter?</strong></h5>
+        <h6>Si vous représentez une entreprise / organisation et souhaitez embaucher, <a href="#">créez un compte employeur</a> pour publier des offres d'emploi et rechercher des CV.</h6>
+      </div>
+    </div>
+
+
+    <div class="column">
+      <div class="container">
+        <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
+          <div class="form-group">
+            <label for="firstname">Prénom*</label>
+            <input type="text" class="form-control" placeholder=" Votre prénom..." id="firstname" formControlName="firstname" />
+          </div>
+          <div class="form-group">
+            <label for="lastname">Nom de famille*</label>
+            <input type="text" class="form-control" placeholder=" Votre nom..."  id="lastname" formControlName="lastname" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email*</label>
+            <input type="email" class="form-control" placeholder=" Votre Adresse Email..."  id="email" formControlName="email" />
+          </div>
+          <div class="form-group">
+            <label for="password">Mot de passe*</label>
+            <input type="password" class="form-control"placeholder=" votre mot de passe..."   id="password" formControlName="password" />
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirmation de mot de passe*</label>
+            <input type="password" class="form-control" placeholder=" confirmer  votre mot de passe..."  id="confirmPassword" formControlName="confirmPassword" />
+          </div>
+          <div class="form-group">
+            <label for="telephone">Téléphone*</label>
+            <input type="tel" class="form-control" id="telephone" placeholder="votre mot de passe" formControlName="telephone" />
+          </div>
+          <div class="form-group">
+            <label for="dateNaissance">Date de naissance*</label>
+            <input type="date" class="form-control" id="dateNaissance"  formControlName="dateNaissance" />
+          </div>
+
+          <div class="form-group">
+            <label for="gouvernorat">Gouvernorat*</label>
+            <select class="form-control" id="gouvernorat" placeholder="Sélectionnez Gouvernorat" formControlName="gouvernorat">
+              <option [ngValue]="null">Select Gouvernorat</option>
+              <option *ngFor="let gouvernorat of gouvernorats" [ngValue]="gouvernorat">{{ gouvernorat.nom }}</option>
+            </select>
+            <small class="p-error block" *ngIf="registerForm.controls['gouvernorat'].invalid &&
+  registerForm.controls['gouvernorat'].dirty">Ce champ est obligatoire</small>
+          </div>
+
+
+          <div class="form-group">
+            <label for="civilite">Civilité*</label>
+            <select class="form-control" id="civilite" placeholder="Sélectionnez Civilité" formControlName="civilite">
+              <option [ngValue]="null">Select civilite</option>
+              <option *ngFor="let civilite of civilites" [ngValue]="civilite">{{ civilite.nom }}</option>
+            </select>
+            <small class="p-error block" *ngIf="registerForm.controls['civilite'].invalid && registerForm.controls['civilite'].dirty">
+              Ce champ est obligatoire
+            </small>
+          </div>
+
+
+          <button  type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">S'inscrire</button>
+          <p style="margin-top: 8px;">Vous avez déjà un compte? <a href="/login">Se connecter</a></p>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>

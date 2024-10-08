@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row">
+       <div class="col-md-1.5">
+           <app-menu-candidat></app-menu-candidat>
+       </div>
+     <div class="col-md-9">
+       <br><br>
+           <div class="flex justify-content-between">
+                <h2> Experiences</h2>
+           </div>
+           <br>
+           <p-table  [value]="experience" [paginator]="true" [rows]="5">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Poste</th>
+                    <th>Date de début</th>
+                    <th>Date de fin</th>
+                    <th>Responsabilités principales</th>
+                    
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-experience >
+                <tr>
+                    <td>{{ experience.poste }}</td>
+                    <td>{{ experience.datedebut }}</td>
+                    <td>{{ experience.datefin }}</td>
+                    <td>{{ experience.responsabilite }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+        
+     </div>
+   </div>
+ </div>
+

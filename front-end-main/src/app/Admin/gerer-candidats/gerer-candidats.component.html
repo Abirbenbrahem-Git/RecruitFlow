@@ -1,0 +1,54 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1.5">
+      <app-menu-admin></app-menu-admin>
+    </div>
+    <div class="col-md-9">
+      <br><br>
+      <div class="flex justify-content-between">
+        <h2>Liste des candidats</h2>
+        <p-button label="Ajouter Candidat" (click)="showAddModal()"></p-button>
+      </div>
+      <br>
+      <p-table [value]="candidats" [paginator]="true" [rows]="5">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Adresse Email</th>
+            <th>Téléphone</th>
+            <th>Date de Naissance</th>
+            <th>Gouvernorat</th>
+            <th>Civilite</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-candidat>
+          <tr >
+            <td>{{ candidat.id }}</td>
+            <td>{{ candidat.firstname }}</td>
+            <td>{{ candidat.lastname }}</td>
+            <td>{{ candidat.email }}</td>
+            <td>{{ candidat.telephone }}</td>
+            <td>{{ candidat.dateNaissance }}</td>
+            <td>{{ candidat.gouvernorat}}</td>
+            <td>{{ candidat.civilite }}</td>
+            <td>
+              <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="showEditModal(candidat)"></button>
+              <button pButton icon="pi pi-trash" class="p-button-rounded p-button-warning mr-2" (click)="deleteCandidat(candidat)" ></button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+      <app-ajouter-candidat [displayAddModal]="displayAddModal" (clickClose)="hideAddModal($event)" (clickAdd)="saveCandidat($event)" ></app-ajouter-candidat>
+      <app-modifier-candidat
+        [displayEditModal]="displayEditModal"
+        [selectedCandidat]="selectedCandidat"
+        (clickClose)="hideEditModal($event)"
+        (clickEdit)="updateCandidat($event)">
+      </app-modifier-candidat>
+      <p-confirmDialog header="Suppression"></p-confirmDialog>
+      <p-toast position="bottom-right"></p-toast>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1.5">
+      <app-menu-admin></app-menu-admin>
+    </div>
+    <div class="col-md-9">
+      <br><br>
+      <div class="flex justify-content-between">
+        <h2>Liste des employeurs</h2>
+        <p-button label="Ajouter Employeur" (click)="showAddModal()"></p-button>
+      </div>
+      <br>
+      <p-table [value]="employeurs" [paginator]="true" [rows]="5">
+        <ng-template pTemplate="header">
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Adresse Email</th>
+          <th>Téléphone</th>
+          <th>Nom_entreprise</th>
+          <th>email_entreprise</th>
+          <th>adresse_entreprise</th>
+          <th>secteur_activite</th>
+        </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-employeur>
+        <tr >
+          <td>{{ employeur.id }}</td>
+          <td>{{ employeur.firstname }}</td>
+          <td>{{ employeur.lastname }}</td>
+          <td>{{ employeur.email }}</td>
+          <td>{{ employeur.telephone }}</td>
+          <td>{{ employeur.nomEntreprise }}</td>
+          <td>{{ employeur.emailEntreprise }}</td>
+          <td>{{ employeur.adresseEntreprise }}</td>
+          <td>{{ employeur.secteurActivite }}</td>
+
+          <td>
+            <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="showEditModal(employeur)"></button>
+            <button pButton icon="pi pi-trash" class="p-button-rounded p-button-warning mr-2" (click)="deleteEmployeur(employeur)" ></button>
+          </td>
+        </tr>
+        </ng-template>
+      </p-table>
+      <app-ajouter-employeur [displayAddModal]="displayAddModal" (clickClose)="hideAddModal($event)" (clickAdd)="saveEmployeur($event)" ></app-ajouter-employeur>
+      <app-modifier-employeur
+        [displayEditModal]="displayEditModal"
+        [selectedEmployeur]="selectedEmployeur"
+        (clickClose)="hideEditModal($event)"
+        (clickEdit)="updateEmployeur($event)">
+      </app-modifier-employeur>
+      <p-confirmDialog header="Suppression"></p-confirmDialog>
+      <p-toast position="bottom-right"></p-toast>
+    </div>
+  </div>
+</div>

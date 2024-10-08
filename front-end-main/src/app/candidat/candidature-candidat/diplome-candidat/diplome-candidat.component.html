@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="row">
+       <div class="col-md-1.5">
+           <app-menu-candidat></app-menu-candidat>
+       </div>
+     <div class="col-md-9">
+       <br><br>
+           <div class="flex justify-content-between">
+                <h2> Diplômes</h2>
+           </div>
+           <br>
+           <p-table  [value]="diplome" [paginator]="true" [rows]="5">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Diplôme</th>
+                    <th>Date d'obtention</th>
+                    
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-diplome >
+                <tr>
+                    <td>{{ diplome.diplome }}</td>
+                    <td>{{ diplome.datediplome }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+        
+     </div>
+   </div>
+ </div>
+
+

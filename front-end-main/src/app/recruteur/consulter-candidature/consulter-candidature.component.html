@@ -1,0 +1,54 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1.5">
+      <app-menu-recruteur></app-menu-recruteur>
+    </div>
+    <div class="col-md-9">
+      <br><br>
+      <div class="flex justify-content-between">
+        <h2> Candidatures</h2>
+      </div>
+      <br>
+      <p-table [value]="candidatures" [paginator]="true" [rows]="5">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Num offre</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>E-Mail</th>
+            <th>Téléphone</th>
+            <th>Compétences</th>
+            <th>Gouvernorat</th>
+            <th>CV</th>
+            <th>Action</th>
+            <th>Expériences</th>
+            <th>Diplômes</th>
+            <th>Statut</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-candidature>
+          <tr>
+            <td>{{ candidature.offre }}</td>
+            <td>{{ candidature.nom }}</td>
+            <td>{{ candidature.prenom }}</td>
+            <td>{{ candidature.mail }}</td>
+            <td>{{ candidature.telephone }}</td>
+            <td>{{ candidature.competence }}</td>
+            <td>{{ candidature.gouvernorat.nom }}</td>
+            <td>{{ candidature.nomficher }}</td>
+            <td><button pButton type="button" label="Télécharger" (click)="downloadFile(candidature.id_candidature, candidature.nomficher)" class="p-button-primary"></button></td>
+            <td><button pButton type="button" label="Expériences" (click)="consulterexperience(candidature.id_candidature)" class="p-button-primary"></button></td>
+            <td><button pButton type="button" label="Diplômes" (click)="consulterdiplome(candidature.id_candidature)" class="p-button-primary"></button></td>
+            <td>{{ candidature.statut}}</td>
+            <td><button pButton type="button" label="Accepter"  class="p-button-success" (click)="accepter(candidature.id_candidature)"></button></td>
+            <td><button pButton type="button" label="Refuser"  class="p-button-danger" (click)="refuser(candidature.id_candidature)"></button></td>
+          </tr>
+        </ng-template>
+      </p-table>
+
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,102 @@
+<header>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-TbdzHP3f3LZ4J+pjwdZzL0nZUEw3fRUzg9hq38R6/Rzvvh/aGXrvwpy6o+xmdXIC" crossorigin="anonymous">
+</header>
+<body>
+<img src="/assets/bienvenuuuuu.webp" alt="Description de l'image" width="1700" height="240">
+<div class="layout-wrapper">
+  <div class="layout-topbar">
+    <div class="layout-menu">
+      <div class="ui-tabmenu ui-widget ui-widget-content ui-corner-all"></div>
+    </div>
+    <h1>
+      <i class="fas fa-greeting"></i>
+      Cher candidat, veuillez spécifier votre profil si vous le souhaitez !
+      <a href="/rechercher" class="not-now-link">
+        <i class="fas fa-clock"></i> <span class="link-text">Pas maintenant</span>
+      </a>
+    </h1>
+  </div>
+  <form [formGroup]="profileForm">
+    <div class="layout-main">
+      <div class="layout-content">
+        <div class="login-card">
+          <div class="login-header">
+            <div class="login-content">
+              <div class="ui-outputpanel ui-widget">
+                <h2>Coordonnées</h2>
+                <div style="display: flex; align-items: center;">
+                  <div style="margin-right: 10px; width: 40%;">
+                    <label class="ui-outputlabel ui-widget">Gouvernorat<span class="ui-outputlabel-rfi">*</span></label>
+                    <div>
+                      <select formControlName="gouvernorat" class="custom-select">
+                        <option value="" disabled selected>Sélectionner un gouvernorat</option>
+                        <option *ngFor="let gouvernorat of gouvernorats" [ngValue]="gouvernorat">{{ gouvernorat.nom }}</option>
+                      </select>
+                      <div *ngIf="profileForm.get('gouvernorat')?.touched && profileForm.get('gouvernorat')?.invalid" class="error">
+                        Gouvernorat est requis
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div style="display: flex; align-items: center;">
+                  <div style="margin-right: 10px; width: 40%;">
+                    <label class="ui-outputlabel ui-widget">Niveau<span class="ui-outputlabel-rfi">*</span></label>
+                    <div>
+                      <select formControlName="niveau" class="custom-select">
+                        <option value="" disabled selected>Sélectionner votre niveau</option>
+                        <option *ngFor="let niveau of niveaux" [ngValue]="niveau">{{ niveau.nom }}</option>
+                      </select>
+                      <div *ngIf="profileForm.get('niveau')?.touched && profileForm.get('niveau')?.invalid" class="error">
+                        Niveau est requis
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div style="display: flex; align-items: center;">
+                  <div style="margin-right: 20px; width: 45%;">
+                    <label class="ui-outputlabel ui-widget" for="diplome">Quel est le diplôme de ton profil ? <span class="ui-outputlabel-rfi">*</span></label>
+                    <input formControlName="diplome" id="diplome" name="diplome" type="text" placeholder="Diplôme..." class="md:w-full mb-5" style="padding:1rem; width: 100%;" aria-required="true">
+                    <div *ngIf="profileForm.get('diplome')?.touched && profileForm.get('diplome')?.invalid" class="error">
+                      Diplôme est requis
+                    </div>
+                  </div>
+
+                </div>
+                <div style="width: 55%;">
+                  <label class="ui-outputlabel ui-widget" for="competences">Compétences Préférées<span class="ui-outputlabel-rfi">*</span></label>
+                  <input formControlName="competences" id="competences" name="competences" type="text" placeholder="Compétences..." class="md:w-full mb-5" style="padding:1rem; width: 100%;" aria-required="true">
+                  <div *ngIf="profileForm.get('competences')?.touched && profileForm.get('competences')?.invalid" class="error">
+                    Compétences sont requises
+                  </div>
+                </div>
+                <div style="width: 55%;">
+                  <label class="ui-outputlabel ui-widget" for="experiencesProfessionnelles">Quel est le parcours professionnel de ton profil ?<span class="ui-outputlabel-rfi">*</span></label>
+                  <input formControlName="experiencesProfessionnelles" id="experiencesProfessionnelles" name="experiencesProfessionnelles" type="text" placeholder="Expérience professionnelle..." class="md:w-full mb-5" style="padding:1rem; width: 100%;" aria-required="true">
+                  <div *ngIf="profileForm.get('experiencesProfessionnelles')?.touched && profileForm.get('experiencesProfessionnelles')?.invalid" class="error">
+                    Expériences professionnelles sont requises
+                  </div>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                <div style="display: flex; justify-content: space-between;">
+                  <div style="margin-left: 20px">
+                    <button type="button" class="btn small-width" routerLink="/rechercher">Retour</button>
+                  </div>
+                  <br>
+                </div>
+
+                  <div style="margin-right: 500px;">
+                    <button type="button" class="btn small-width" (click)="addCandidatprofil()">Enregistrer</button>
+                  </div>
+                </div>
+                <p-toast position="bottom-right"></p-toast>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+</body>

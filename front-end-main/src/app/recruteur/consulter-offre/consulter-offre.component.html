@@ -1,0 +1,49 @@
+<div class="container-fluid">
+   <div class="row">
+      <div class="col-md-1.5">
+          <app-menu-recruteur></app-menu-recruteur>
+      </div>
+    <div class="col-md-9">
+      <br><br>
+          <div class="flex justify-content-between">
+               <h2> Offres D'emploi</h2>
+               <p-button label="Ajouter offre" (click)="showAddModal()"></p-button>
+          </div>
+          <br>
+          <p-table [value]="offres" [paginator]="true" [rows]="5">
+               <ng-template pTemplate="header">
+                  <tr>
+                     <th>Title</th>
+                     <th>Description</th>
+                     <th>Détails</th>
+                     <th>Salaire</th>
+                     <th>Gouvernorat</th>
+                     <th>Niveau</th>
+                     <th></th>
+                     <th></th>
+                   </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-offre>
+                  <tr>
+                    <td>{{ offre.titre }}</td>
+                    <td>{{ offre.description }}</td>
+                    <td>{{ offre.detail }}</td>
+                    <td>{{ offre.salaire}} DT</td>
+                    <td>{{ offre.gouvernorat.nom}}</td>
+                    <td>{{ offre.niveau.nom}}</td>
+                    <td>
+                       <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="showEditModal(offre)"></button>
+                       </td>
+                       <td>
+                       <button pButton icon="pi pi-trash" class="p-button-rounded p-button-warning mr-2" (click)="deleteOffre(offre)" ></button>
+                    </td>
+                  </tr>
+               </ng-template>
+          </p-table>
+  <app-ajouter-offre [displayAddModal]="displayAddModal" (clickClose)="hideAddModal($event)" (clickAdd)="saveOffre($event)" ></app-ajouter-offre>
+  <app-modifier-offre [displayEditModal]="displayEditModal" (clickClose)="hideEditModal($event)" [selectedOffre]="selectedOffre" (clickEdit)="updateOffre($event)" ></app-modifier-offre>
+  <p-confirmDialog header="Suppression"></p-confirmDialog>
+   <p-toast position="bottom-right"></p-toast>
+    </div>
+  </div>
+</div>

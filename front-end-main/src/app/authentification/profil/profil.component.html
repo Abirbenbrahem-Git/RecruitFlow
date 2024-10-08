@@ -1,0 +1,362 @@
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #ffffff, #ffffff, #ffffff);
+    background-size: 400% 400%;
+    animation: gradientBackground 15s ease infinite;
+  }
+
+  @keyframes gradientBackground {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .profile {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 1s forwards;
+  }
+
+  .profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .profile img:hover {
+    transform: scale(1.1);
+  }
+
+  .profile h2 {
+    margin-bottom: 10px;
+    color: #0056b3;
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .profile p {
+    margin-bottom: 5px;
+    font-size: 14px;
+    animation: fadeIn 1.2s ease-in-out;
+  }
+
+  .profile span {
+    font-weight: bold;
+  }
+
+  .profile a.update-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    color: #007bff;
+    text-decoration: none;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .profile a.update-link:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  /* Keyframes for animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .container-frame {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #1591d3;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s forwards;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .w3-top {
+    position: fixed;
+    width: 100%;
+    top: 0;
+  }
+
+  .w3-bar {
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #c0bebe;
+  }
+
+  .w3-right {
+    float: right;
+  }
+
+  .w3-bar-item {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+
+  .w3-bar-item:hover {
+    color: #70c6f5;
+  }
+
+  .img-logo {
+    width: auto;
+    height: 40px;
+    margin-right: 20px;
+  }
+
+  .custom-nav {
+    background-color: #9ad5f6 !important;
+    color: white !important;
+  }
+
+  a {
+    background-color: transparent;
+  }
+
+  h2, h5, h6 {
+    color: rgba(8, 8, 8, 0.779);
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="tel"],
+  select {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #7bb9f6;
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out;
+  }
+
+  input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out;
+    box-sizing: border-box;
+  }
+
+  input:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+
+  .btn-primary {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  }
+
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+
+  .btn-primary:disabled,
+  .btn-primary.disabled {
+    background-color: #b3d7ff;
+    border-color: #b3d7ff;
+  }
+
+  .social-buttons {
+    margin-top: 20px;
+  }
+
+  .social-buttons div {
+    margin-bottom: 10px;
+  }
+
+  .social-linkedin, .social-facebook {
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-back {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    font-size: 10px;
+    padding: 2px 14px;
+  }
+
+  .social-linkedin:hover, .social-facebook:hover {
+    color: #007bff;
+  }
+
+  .fab {
+    margin-right: 5px;
+  }
+
+  .profile-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+
+  .profile-container p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .profile-container strong {
+    color: #0056b3;
+  }
+
+  .profile-container span {
+    color: #333;
+  }
+
+  p {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    margin: 10px 0;
+  }
+
+  p strong {
+    color: #000;
+  }
+
+  p span {
+    color: #555;
+  }
+  .img-logo {
+    width: auto;
+    height: 40px;
+    margin-right: 20px;
+    animation: slideInLeft 1s ease-in-out;
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .container-frame {
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile {
+    text-align: center;
+  }
+
+  .profile-image img {
+    width: 70px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 50%;
+  }
+</style>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card custom-nav" style="letter-spacing:4px;">
+    <img src="assets/logo.png" class="img-logo " >
+    <div class="w3-right w3-hide-small">
+      <a href="/accueil"class="w3-bar-item w3-button">Accueil</a>
+      <a href="/registration" class="w3-bar-item w3-button">S'inscrire</a>
+      <a href="/login" class="w3-bar-item w3-button">Se Connecter</a>
+    </div>
+  </div>
+</div>
+<body>
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<hr style="border-top: 2px solid hsl(0,0%,100%);">
+<div class="container-frame">
+  <div class="profile">
+    <div class="profile-image">
+      <img src="assets/5178994.png" alt="Profile Image">
+    </div>
+    <p><strong>Nom:</strong> <span>{{ userDetails?.firstname }}</span></p>
+    <p><strong>Prénom:</strong> <span>{{ userDetails?.lastname }}</span></p>
+    <p><strong>Email:</strong> <span>{{ userDetails?.email }}</span></p>
+    <p><strong>Téléphone:</strong> <span>{{ userDetails?.telephone }}</span></p>
+    <p><strong>Date de Naissance:</strong> <span>{{ userDetails?.dateNaissance }}</span></p>
+    <p><strong>Gouvernorat:</strong> <span>{{ userDetails?.gouvernorat }}</span></p>
+    <p><strong>Civilité:</strong> <span>{{ userDetails?.civilite }}</span></p>
+    <a href="/majprofil" class="update-link">Mettre à jour le profil</a>
+  </div>
+</div>
+</body>
